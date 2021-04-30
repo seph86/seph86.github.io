@@ -76,6 +76,7 @@ input:not(:placeholder-shown):invalid {
 legend {
   font-size: 0.8rem;
   position: relative;
+  width: 100%;
 }
 legend > span { 
   color: red;
