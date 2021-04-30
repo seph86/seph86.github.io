@@ -1,0 +1,234 @@
+/* meyerweb css reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+}
+
+h1 {
+  font-size: 5rem;
+  text-align: center;
+}
+
+
+/* Header styling */
+header {
+  background-color: rgb(10, 62, 204);
+  height: 8rem;
+  display: grid;
+  grid-template-columns: 20% auto 20%;
+  color: lightgrey;
+  overflow: hidden;
+}
+header img {
+  height: 10rem;
+  align-self: center;
+  justify-self: center;
+}
+header h2 {
+  align-self: center;
+  justify-self: center;
+  font-size: 3rem;
+  font-family: arial;
+}
+
+
+/* Main styling */
+main {
+  max-width: 30rem;
+  margin: 0 auto 2rem ;
+  min-height: calc(100vh - 9rem);
+  font-family: arial;
+}
+main h1 {
+  margin-bottom: 4rem;
+}
+fieldset {
+  display: grid;
+  grid-template-columns: 30% auto;
+}
+label {
+  align-self:center;
+  padding-left: 4px;
+}
+fieldset > *:not(legend, .error) {
+  margin-top: 1rem;
+}
+legend, .error, .full {
+  grid-column: 1/-1;
+}
+input:not(:placeholder-shown):invalid {
+  color: red;
+}
+legend {
+  font-size: 0.8rem;
+  position: relative;
+}
+legend > span { 
+  color: red;
+}
+legend > i { 
+  font-size: 1.4rem;
+  position: absolute;
+  right: 1rem;
+}
+video {
+  position: absolute;
+  display:none;
+  left: calc(50vw - 120px);
+}
+input, textarea, label {
+  background-color: rgb(248, 248, 248);
+  border: none;
+  font-size: 1.25rem;
+}
+textarea, label {
+  width: 100%;
+}
+div > input {
+  width: calc(99.5% - 3.4em);
+  padding-right: 2.5em;
+}
+input + i {
+  margin-left: -2em;
+  color:#333;
+  width: 1em;
+}
+input[type="email"], input[type="text"] {
+  padding-left: 1em;
+}
+label {
+  border-right: lightgrey solid 1px;
+}
+label[class*="required"]::after {
+  content: "*";
+  color: red;
+}
+.error {
+  display: none;
+  background-color: rgb(255, 66, 66);
+  height: 2rem;
+  text-align: center;
+  line-height: 2rem;
+  font-weight: bold;
+}
+label[for="newsletter"], label[for="message"] {
+  position:relative;
+  background-color: white;
+  border:none;
+}
+input[type="checkbox"] {
+  display:none;
+}
+input[type="checkbox"] + span {
+  opacity: 0;
+  position: absolute;
+  left:0;
+  top:0;
+  animation-iteration-count: 1;
+  animation-duration: 0.5s;
+  transition: opacity 0.5s;
+}
+input[type="checkbox"]:checked + span {
+  display:inline;
+  opacity:1;
+  animation-name: tick-anim;
+}
+.fa-circle, .fa-check {
+  font-size: 2rem;
+  padding:0;
+  width: auto;
+  justify-self: left;
+}
+.fa-circle {
+  color: rgb(100, 100, 100);
+}
+.fa-check {
+  color:rgb(51, 51, 51);
+}
+@keyframes tick-anim {
+  0% {transform: rotate(0deg); opacity: 0;}
+  75% {transform: rotate(390deg); opacity: 1;}
+  100% {transform: rotate(360deg);}
+}
+fieldset > span {
+  justify-self: center;
+}
+input[type="submit"] {
+  width: 10rem;
+  color: grey;
+  transition: background-color 0.3s, color 0.3s;
+}
+input[type="submit"]:disabled {
+  background-color:#cccccc;
+}
+input[type="submit"]:enabled {
+  background-color: #333;
+  color: white;
+}
+input[type="submit"]:enabled:hover {
+  background-color: #555;
+}
+
+/* Footer styling */
+footer {
+  background-color: #222;
+  height: 10rem;
+  display: flex;
+  color: white;
+}
+footer h3 {
+  font-size:2rem;
+  font-family: arial;
+}
+footer > * {
+  margin: 1rem;
+}
+footer pre {
+  font-size: 1rem;
+  font-family: 'Times New Roman', Times, serif;
+}
+footer div:nth-child(3){
+  display:none;
+}
+footer div:last-child {
+  margin-left: auto;
+  align-self: flex-end;
+}
+
+/* Media queries */
+@media only screen and (max-width: 600px) {
+
+  header {height: 3rem; grid-template-columns: auto;}
+  header img { height: 4rem;}
+  header h2 { display: none;}
+
+
+  main { max-width: 95vw; }
+  main h1 { font-size: 3rem; margin-bottom: 1rem;}
+  fieldset { grid-template-columns: 1fr;}
+  label:not(label[for="newsletter"]), legend, #name {display:none;}
+  input, label, textarea {padding: 0.5rem!important; width: 97%!important;}
+  .fa-check {padding: 0.5rem;}
+  label > span {padding-left: 0.5rem;}
+
+  footer {justify-content: space-between; height: 4rem;}
+  footer > div > span,
+  footer > pre {display: none;}
+  footer > div:nth-child(3) {display: block;}
+  footer > div:last-child {margin: 0; align-self:center;}
+
+}

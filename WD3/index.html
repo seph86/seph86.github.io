@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PHEM - Contact Us</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    
+    <header>
+      <img src="/media/logo.svg" alt="PHEM"/>
+      <h2>Paul Humphreys Engineering</h2>
+    </header>
+
+    <main>
+      <h1>Contact us</h1>
+      <form novalidate>
+        <fieldset>
+
+          <legend>
+            <span>*</span> required fields<i id="help" class="far fa-question-circle"></i>
+          </legend>
+          <video id="video" src="/media/output.mp4"></video>
+
+          <label for="name">Name</label>
+          <div>
+            <input id="name" type="text" name="name" placeholder="Name" maxlength=150>
+            <i class="fas fa-user"></i>
+          </div>
+
+          <label for="email" class="required">Email</label>
+          <div>
+            <input id="email" type="email" name="email" placeholder="Email (required)" required onblur="check_element(this)">
+            <i class="far fa-envelope"></i>
+          </div>
+          <div id="emailError" class="error"></div>
+
+          <label for="confirm" class="required">Confirm Email</label>
+          <div>
+            <input id="confirm" type="email" name="email2" placeholder="Confirm email (required)" required  onblur="check_element(this)">
+            <i class="far fa-envelope"></i>
+          </div>
+          <div id="confirmError" class="error"></div>
+
+          <label for="number">Phone Number</label>
+          <div>
+            <input id="number" type="text" placeholder="Phone Number" pattern="\+*[0-9\s]{0,15}"  onblur="check_element(this)">
+            <i class="fas fa-phone"></i>
+          </div>
+          <div id="numberError" class="error"></div>
+
+          <label for="message" class="required full">Message</label>
+          <textarea id="message" class="full" name="message" placeholder="Enter your message here... (required)" required rows="7" maxlength=1500  onblur="check_element(this)"></textarea>
+          <div id="messageError" class="error"></div>
+
+          <label for="newsletter">Subscribe to our newsletter</label>
+          <label for="newsletter" class="far fa-circle">
+            <input id="newsletter" type="checkbox" name="newsletter">
+            <span class="fas fa-check"></span>
+          </label>
+
+          <span class="full"><input id="submit" type="submit" disabled></span>
+
+        </fieldset>
+      </form>
+    </main>
+
+    <footer>
+      <div>&copy; 2021<span> - PHEM</span></div>
+      <pre>
+        Paul Humphreys:
+        paul.humphreys@phem.com.au
+      </pre>
+      <div><h3>PHEM</h3></div>
+      <div>Website by - Mitchum Cox</div>
+    </footer>
+
+  </body>
+</html>
